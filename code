@@ -1,0 +1,68 @@
+
+package javaapplication10;
+
+
+import java.util.Scanner;
+
+public class JavaApplication10 {
+
+    
+    
+public static int power (int base, int exp,int g){
+
+if(exp ==1){
+    return base;
+    
+}
+else{
+exp=exp-1;
+base=base*g;
+
+power(base, exp, g);
+}
+return power(base, exp, g);
+}
+    
+    public static int gcd (int num1, int num2,int g, int z){
+
+if(num1<g||g>num2){
+    return z;
+    
+}
+else{
+if(num1%g==0&&num2%g==0){
+z=g;
+}
+
+g=g+1;
+}
+return gcd(num1, num2, g,z);
+}
+    
+    public static void main(String[] args) {
+        Scanner input =new Scanner(System.in);
+        int base; 
+        int orig;
+        int expo;
+     System.out.println("Please enter a base: ");
+     base=input.nextInt();
+      System.out.println("Please enter a power: ");
+     expo=input.nextInt();
+     orig=base;
+      System.out.println("the answer is: ");
+      System.out.println(power(base,expo,orig));
+      
+      int num1;
+      int num2;
+      int zero0 = 0, one1=1;
+     System.out.println("Please enter a number : ");
+     num1=input.nextInt();
+     System.out.println("Please enter a number : ");
+     num2=input.nextInt();
+    System.out.println("the GCD is: ");
+        System.out.println(gcd(num1,num2,one1,zero0));
+ 
+        
+    }
+    
+}
